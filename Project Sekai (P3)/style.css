@@ -1,0 +1,865 @@
+@media only screen and (max-width: 600px) {
+    /* styles here will be applied to mobile devices with a maximum width of 600px */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+    /* styles here will be applied to tablet devices with a minimum width of 601px and a maximum width of 900px */
+}
+
+@media only screen and (min-width: 901px) {
+    body{
+        font-size: 16px;
+    }
+}
+
+*{
+    font-family: "Nunito";
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height:10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #fff0eb;
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #2d0b00;
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #858484;
+  }
+
+/* <----- Cover -----> */
+
+.cover{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    background-color: #fff0eb;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+/* <----- Intro (Heading, Paragraph & Skip Button) -----> */
+
+.intro{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeR 3s forwards;
+}
+
+.intro h1, p{
+    margin: 0 1em;
+}
+
+.intro h1{
+    font-size: 50px;
+    text-align: center;
+    background-color: #ffd4c6;
+    border-radius: 50px;
+    padding: 15px 0;
+    cursor: default;
+    box-shadow:  10px 10px 20px #d9b4a8,
+                -10px -10px 20px #fff4e4;
+    text-shadow: 3px 8px 8px gray;
+
+}
+
+.intro p{
+    text-indent: 5em;
+    font-size: 20px;
+    margin-top: 50px;
+    background: #ffd4c6;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: default;
+    box-shadow:  10px 10px 20px #d9b4a8,
+                -10px -10px 20px #fff4e4;
+}
+
+.intro p span {
+    opacity: 0; /* initial state: invisible */
+}
+
+.intro p span.animated {
+    animation: write 0.5s forwards;
+    animation-delay: 0.5s; /* adjust delay for each word */
+}
+
+/* <----- Intro > Skip Button -----> */
+
+#skipbtn{
+    width: auto;
+    height: 25px;
+    position: absolute;
+    bottom: 70px;
+    left: 30px;
+    background-color: #ffd4c6;
+    border: none;
+    border-radius: 7px;
+    transition: 0.5s;
+    cursor: pointer;
+    animation: fadeOut 0.5s forwards;
+    animation-delay: 9.75s;
+}
+
+#skipbtn:hover{
+    border: none;
+    background-color: #2d0b00;
+    color: #fff0eb;
+    text-shadow: 0 0 10px #fff0eb;
+}
+
+/* <----- Cover > Image -----> */
+
+.cover img{
+    width: 50%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: fadeL 3s forwards;
+    box-shadow: -5px 0 10px #fff0eb;
+}
+
+/* <----- Cover > Button (Explore!) -----> */
+
+#hidebtn{
+    border-radius: 20px;
+    border: 1px solid gray;
+    position: absolute;
+    padding: 1em 50px;
+    right: 50%;
+    bottom: 5%;
+    cursor: pointer;
+    animation: fadeUp 1s forwards;
+    animation-delay: 10s;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#hidebtn:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+    text-shadow: 0 0 10px #fff0eb;
+}
+
+#hidebtn strong{
+    margin: 0 25px;
+}
+
+.fa-angle-double-right, .fa-angle-double-left {
+    animation: twinkle 1s infinite;
+}
+
+/* <----- Navbar -----> */
+
+#navbar{
+    display: flex;
+    width: 100vw;
+    height: 0;
+    justify-content: space-evenly;
+    background-color: #ffd4c6;
+    align-items: center;
+    border-radius: 25px;
+    position: fixed;
+    top: 10px;
+    left: 0;
+    font-weight: bold;
+    overflow-y: hidden;
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+/* <----- Navbar > Search -----> */
+
+.search-icon{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 150px;
+    height: 50px;
+    align-items: center;
+}
+
+.search-icon i{
+    position: absolute;
+    transform: translate(-5px, -1px);
+    cursor: pointer;
+    transition: 1s;
+}
+
+#searchbar{
+    position: absolute;
+    float: right;
+    width: 80px;
+    height: 35px;
+    transition: 1s;
+    background-color: transparent;
+    border-radius: 0.75em;
+    border: none;
+    background-color: #fff0eb;
+}
+
+#searchbar:focus{
+    width: 150px;
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+#searchbar:focus ~ .fa-search{
+    color: #fff0eb;
+}
+
+/* <----- Navbar > Button (Activity, MemberShip & Profile) -----> */
+
+.navbtn{
+    padding: 10px 50px;
+    border-radius: 0.75em;
+    background-color: #fff0eb;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+.navbtn:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+/* <----- Navbar > Activity -----> */
+
+.navbtn:hover .fa-bell{
+    animation: ringing 1s ease-in-out;
+}
+
+/* <----- Navbar > Membership -----> */
+
+.navbtn:hover .fa-star{
+    animation: rotate180 1s forwards;
+}
+
+.navbtn:not(:hover) .fa-star{
+    animation: re-rotate180 1s forwards;
+}
+
+/* <----- Navbar > Membership -----> */
+
+.navbtn:hover .fa-user{
+    animation: jump 1s forwards;
+}
+
+/* <----- Navbar > Switch (For theme) -----> */
+
+/* From Uiverse.io by andrew-demchenk0 */ 
+
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+}
+
+.sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+.moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+.sun svg {
+    animation: rotate-sun 15s linear infinite;
+}
+
+.moon svg {
+    animation: tilt-moon 5s linear infinite;
+}
+
+.input:checked + .slider {
+    background-color: #183153;
+}
+
+.input:focus + .slider {
+    box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider:before {
+    transform: translateX(30px);
+}
+/*
+
+/* <----- Toggle Menu -----> */
+
+#toggle-menu{
+    width: 0;
+    height: 99vh;
+    border-radius: 50px 0 0 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffd4c6;
+    border: 3px solid #fff0eb;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    overflow-x: hidden;
+}
+
+/* <----- Toggle Menu > fa-arrow-right-----> */
+
+.arrow{
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 30px;
+    background-color: #fff0eb;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.arrow:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+.fa-arrow-right{
+    padding: 5px 7px;
+}
+
+.arrow:hover .fa-arrow-right{
+    animation: arrow-sign 0.5s forwards;
+}
+
+/* <----- Toggle Menu > Profile Pics -----> */
+
+.pf-name{
+    width: 100%;
+    height: 125px;
+    margin: 70px 0 0;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #fff0eb;
+}
+
+.pfp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #2d0b00;
+}
+
+.change-picture-btn {
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+}
+
+.change-picture-btn:hover {
+    color: #2d0b00;
+}
+
+.change-picture-btn:hover .fa-pen{
+    animation: pen-sign 0.45s linear forwards;
+}
+
+/* <----- Toggle Menu > Profile > Recommend -----> */
+
+#recommend{
+    padding: 3px 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    left: 0;
+    top: 95px;
+    background-color: #ffd4c681;
+    display: none;
+    color: #666;
+}
+
+.change-picture-btn:hover ~ #recommend{
+    display: inline-block;
+}
+
+/* <----- Hidden Profile > Save & Wishlist -----> */
+
+.bookmark-wish{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+}
+
+.s-w{
+    background-color: #fff0eb;
+    width: 150px;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.s-w:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+.s-w:hover .fa-bookmark{
+    animation: jump 1s forwards;
+}
+
+.s-w:hover .fa-hashtag{
+    animation: flip 1s forwards;
+}
+
+/* <----- Hidden Profile >  Download Terabox Btn -----> */
+
+#DL-btn{
+    width: 100%;
+    height: 40px;
+    background-color: #fff0eb;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+#DL-btn.animateHeight {
+    animation: animateHeight 0.5s forwards;
+}
+
+#DL-btn.animateHeightReverse {
+    animation: animateHeightReverse 0.5s forwards;
+}
+
+
+.rotateCH:checked + label .fa-arrow-circle-right{
+    transform: rotate(90deg);
+}
+
+.tera{
+    transition: 0.5s;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tera:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+.tera:hover .fa-download{
+    animation: jump 1s forwards;
+}
+
+/* <----- Hidden Profile >  Download Terabox Btn > Hidden Devices -----> */
+
+.hide-devices{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.devices{
+    cursor: pointer;
+    width: 100%;
+    margin: 0 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.devices:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+.devices:hover .dv{
+    animation: jump 1s forwards;
+}
+
+#apple{
+    transform: translateY(-1.5px);
+}
+
+/* <----- Hidden Profile > Create an account (Button) -----> */
+
+.loginbtn{
+    position: absolute;
+    bottom: 72px;
+    transform: translateX(100px);
+    border-radius: 15px;
+    padding: 10px 50px;
+    background-color: #fff0eb;
+    width: fit-content;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.loginbtn:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+.loginbtn:hover .fa-paper-plane{
+    animation: ringing 7s infinite linear;
+}
+
+/* <----- Login / Create an account (Hidden Form) -----> */
+
+.login-create{
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    overflow: hidden;
+    transition: 1s;
+}
+
+/* <----- Login -----> */
+
+.loginform{
+    top: 60%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+#leftform{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffd4c6;
+    justify-content: space-between;
+    position: fixed;
+}
+
+.e-pw{
+    width: 175px;
+    height: 30px;
+    margin: 0 0 5px 0;
+}
+
+.loginforgot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.login{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff0eb;
+    transition: 0.5s;
+}
+
+.login:hover, .f-p:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+    cursor: pointer;
+}
+
+.f-p{
+    padding: 5px;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.c-btn{
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: 0.5s;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.c-btn:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+/* <----- Create an account -----> */
+
+.createform{
+    width: 0;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#rightform{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffd4c6;
+    position: fixed;
+}
+
+#create{
+    background-color: #fff0eb;
+    text-align: center;
+    margin: 3px 50px 5px 50px;
+    padding: 3px 0;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+#create:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+#login{
+    text-wrap: nowrap;
+}
+
+#loginbtn{
+    border: 1px solid;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+#loginbtn:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+/* <----- Hidden Profile > Contact us (Button) -----> */
+
+.contactus{
+    width: 320px;
+    height: auto;
+    display: flex;
+    margin: 0 15px;
+    background-color: #fff0eb;
+    border-radius: 15px;
+    margin: 10px 0 10px 15px;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 10px;
+}
+
+.contact{
+    padding: 5px 10px;
+    margin: 5px;
+    transition: 0.5s;
+}
+
+.contactbtn:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contactbtn:hover .fa-phone{
+    animation: ringing 1s ease-in-out;
+}
+
+/* <----- Contact us (Hidden Form) -----> */
+
+.blurbg{
+    width: 100vw;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    display: flex;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.hidden-contact-form{
+    width: 100vh;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.fa-times{
+    font-size: 25px;
+    float: right;
+    margin: 7px 12px;
+    transition: 1s;
+    color: #2d0b0080;
+}
+
+.fa-times:hover{
+    color: #2d0b00;
+    animation: rotate180 0.5s forwards;
+}
+
+.fa-times:not(:hover){
+    color: #2d0b0080;
+    animation: re-rotate180 0.5s forwards;
+}
+
+/* <----- Contact us > Fieldset -----> */
+
+#cu{ /* Contact us */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff0eb;
+}
+
+#cu legend, #social legend{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.un-em{ /* Username & Email */
+    width: 175px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+#dc{ /* Description */
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding: 5px;
+}
+
+#sm{ /* Submit */
+    width: fit-content;
+    padding: 5px 7px;
+    transform: translateX(450px);
+    background-color: #fff0eb;
+    border: 1px solid;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#sm:hover{
+    background-color: #2d0b00;
+    color: #fff0eb;
+}
+
+#social{ /* Social Icons Btn */
+    background-color: #fff0eb;
+    width: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#social svg{
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 35px;
+    color: #fff0eb;
+    background-color: #2d0b00;
+}
+
+#noti-1{ /* Float Noti 1 */
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #fff0eb;
+    color: #666;
+    transform: translate(-150px, 0);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.m-t:hover #noti-1{
+    opacity: 1;
+    transform: translate(-150px, 25px);
+}
+
+#noti-2{ /* Float Noti 2 */
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #fff0eb;
+    color: #666;
+    transform: translate(-150px, 0);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.m-t:hover #noti-2{
+    opacity: 1;
+    transform: translate(-150px, 25px);
+}
+
